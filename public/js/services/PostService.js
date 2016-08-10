@@ -6,7 +6,7 @@
   PostService.$inject = ['$http'];
 
   function PostService($http){
-    var baseURL = 'https://calm-atoll-49293.herokuapp.com/posts/';
+    var baseUrl = 'https://calm-atoll-49293.herokuapp.com/posts/';
     var service = {
       getAllPosts: getAllPosts,
       createPost: createPost,
@@ -22,8 +22,14 @@
     function createPost(postObj){
       return $http.post(baseUrl, postObj);
     }
-    function getOnePost(postId){}
-    function updatePost(postId, updateInfo){}
-    function deletePost(postId){}
+    function getOnePost(postId){
+      return $http.get(baseUrl+postId);
+    }
+    function updatePost(postId, updateInfo){
+      return $http.put(baseUrl+postId, updateInfo);
+    }
+    function deletePost(postId){
+      return $http.delete(baseUrl+postId);
+    }
   }
 }());

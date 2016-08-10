@@ -3,12 +3,42 @@
   angular.module('ngBlog')
          .controller('SimpleController', SimpleController);
 
-  SimpleController.$inject = ['$scope', 'UserService', 'CommentService'];
+  SimpleController.$inject = ['$scope', 'UserService', 'CommentService', 'PostService'];
 
-  function SimpleController($scope, UserService, CommentService){
+  function SimpleController($scope, UserService, CommentService, PostService){
     $scope.message = 'Hey! Angular Works!';
 
-
+    // PostService.getAllPosts()
+    //            .then(function(response){
+    //              console.log(response);
+    //            });
+    // var postObj = {
+    //   title: 'Not magic',
+    //   body: 'What is this magic, and is it truly magic?',
+    //   author: '57a92af60bdf701100b451bf'
+    // };
+    // PostService.createPost(postObj)
+    //            .then(function(response){
+    //              console.log(response);
+    //            });
+    // var postId = '57aa6ba1be37441100702071';
+    // PostService.getOnePost(postId)
+    //            .then(function(response){
+    //              console.log(response);
+    //            });
+    // var updateInfo = {
+    //   title: 'testingUpdatepost',
+    //   body: 'look ma, no hands',
+    //   author: '57aa5cc0edc0cf1100d8940b'
+    // };
+    // PostService.updatePost(postId, updateInfo)
+    //            .then(function(response){
+    //              console.log(response);
+    //            });
+    // PostService.deletePost(postId)
+    //            .then(function(response){
+    //              console.log(response);
+    //            });
 
     // CommentService.getAllComments()
     //               .then(function(response){

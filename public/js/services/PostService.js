@@ -1,6 +1,6 @@
 
 (function() {
-  angular.model('ngBlog')
+  angular.module('ngBlog')
          .factory('PostService', PostService);
 
   PostService.$inject = ['$http'];
@@ -16,10 +16,14 @@
     };
     return service;
 
-    function getAllPosts(){}
-    function createPost(){}
-    function getOnePost(){}
-    function updatePost(){}
-    function deletePost(){}
+    function getAllPosts(){
+      return $http.get(baseUrl);
+    }
+    function createPost(postObj){
+      return $http.post(baseUrl, postObj);
+    }
+    function getOnePost(postId){}
+    function updatePost(postId, updateInfo){}
+    function deletePost(postId){}
   }
 }());

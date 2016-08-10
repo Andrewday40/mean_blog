@@ -6,9 +6,9 @@
   CommentService.$inject = ['$http'];
 
   function CommentService($http){
-    var baseURL = 'https://calm-atoll-49293.herokuapp.com/comments/';
+    var baseUrl = 'https://calm-atoll-49293.herokuapp.com/comments/';
     var service = {
-      getAllComents: getAllComents,
+      getAllComments: getAllComments,
       createComment: createComment,
       getOneComment: getOneComment,
       updateComment: updateComment,
@@ -22,8 +22,14 @@
     function createComment(commentObj){
       return $http.post(baseUrl, commentObj);
     }
-    function getOneComment(commentId){}
-    function updateComment(commentId, updateInfo){}
-    function deleteComment(commentId){}
+    function getOneComment(commentId){
+      return $http.get(baseUrl+commentId);
+    }
+    function updateComment(commentId, updateInfo){
+      return $http.put(baseUrl+commentId, updateInfo);
+    }
+    function deleteComment(commentId){
+      return $http.delete(baseUrl+commentId);
+    }
   }
 }());

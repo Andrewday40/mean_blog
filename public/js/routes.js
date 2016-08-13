@@ -1,5 +1,5 @@
 (function() {
-  anuglar.module('ngBlog')
+  angular.module('ngBlog')
          .config(RouteConfig);
 
   RouteConfig.$inject = ['$routeProvider', '$locationProvider'];
@@ -8,31 +8,31 @@
     $routeProvider
     .when('/', {
       templateUrl: 'html/views/home.html',
-      controller: 'HomeController'
+      // controller: 'HomeController'
     })
     .when('/login', {
       templateUrl: 'html/views/login.html',
-      controller: 'LoginController'
+      // controller: 'LoginController'
     })
     .when('/signup', {
       templateUrl: 'html/views/signup.html',
-      controller: 'SignupController'
+      // controller: 'SignupController'
     })
     .when('/profile/:userId', {
       templateUrl: 'html/views/profile.html',
-      controller: 'ProfileController'
+      // controller: 'ProfileController'
     })
     .when('/post/:postId', {
       templateUrl: 'html/views/post.html',
-      controller: 'PostController'
+      // controller: 'PostController'
     })
-    .when('/post/create', {
+    .when('/post/:postId/create', {
       templateUrl: 'html/views/post-create.html',
-      controller: 'PostController'
+      // controller: 'PostController'
     })
-    .when('/post/edit/:postId', {
+    .when('/post/:postId/edit', {
       templateUrl: 'html/views/post-edit.html',
-      controller: 'PostController'
+      // controller: 'PostController'
     })
     .otherwise({
       redirectTo: '/'

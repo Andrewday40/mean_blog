@@ -14,7 +14,6 @@
       updatePost: updatePost,
       deletePost: deletePost
     };
-    return service;
 
     function getAllPosts(){
       return $http.get(baseUrl);
@@ -31,5 +30,6 @@
     function deletePost(postId){
       return $http.delete(baseUrl+postId);
     }
+    return service;
   }
 }());
